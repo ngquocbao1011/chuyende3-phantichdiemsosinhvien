@@ -1,77 +1,70 @@
-# Phân Tích Điểm Số Sinh Viên
+1 Giới thiệu
 
-## Mô tả đề tài
+Module này thực hiện Exploratory Data Analysis (EDA) trên bộ dữ liệu điểm số sinh viên.
+Mục tiêu là:
 
-Đề tài phân tích bộ dữ liệu điểm thi của 1000 sinh viên, gồm 3 môn Math, Reading và Writing. Ngoài điểm số, dữ liệu còn có thêm thông tin về giới tính, nhóm dân tộc, trình độ học vấn phụ huynh, chế độ bữa trưa và việc có tham gia khóa ôn thi hay không.
+Hiểu phân bố dữ liệu
+Phát hiện mối quan hệ giữa các biến
+Xác định các yếu tố ảnh hưởng đến kết quả học tập
 
-Mục tiêu chính:
-- Làm sạch dữ liệu điểm, xử lý lỗi và tạo biến phụ trợ
-- Phân tích điểm trung bình theo lớp (nhóm) và theo từng môn
-- Xác định yếu tố nào ảnh hưởng đến kết quả học tập
-- Trực quan hóa phân bố điểm bằng nhiều dạng biểu đồ
-- Dự đoán điểm cuối kỳ bằng mô hình Regression
+2 Công nghệ sử dụng
 
-## Cấu trúc thư mục
+Python
+Pandas
+NumPy
+SciPy (thống kê)
 
-```
-StudentPerformance/
-├── StudentsPerformance.csv
-├── main.py
-├── utils.py
-├── data_cleaning.py
-├── eda.py
-├── visualization.py
-├── modeling.py
-├── insight.py
-├── README.md
-└── output/
-```
+3 Nội dung phân tích
 
-## Cài đặt
+1. Thống kê mô tả
+Mean, min, max, std
+Skewness (độ lệch)
+Kurtosis (độ nhọn)
+2. Phân tích theo môn
+So sánh điểm trung bình:
+Toán (Math)
+Đọc (Reading)
+Viết (Writing)
+3. Phân tích theo nhóm (ethnicity)
+Điểm trung bình theo nhóm
+Kiểm định ANOVA
+Kiểm tra sự khác biệt giữa các nhóm
+4. Phân bố học lực
+Số lượng từng loại xếp loại
+Tỷ lệ Đạt / Không đạt
+5. Phân tích theo giới tính
+So sánh điểm trung bình Nam vs Nữ
+Kiểm định T-test
+6. Trình độ phụ huynh
+Ảnh hưởng đến điểm trung bình
+7. Khóa ôn thi (test preparation)
+So sánh:
+Có học (completed)
+Không học (none)
+Kiểm định T-test
+Tính chênh lệch điểm trung bình (diff_prep)
+8. Bữa trưa
+Ảnh hưởng của:
+standard
+free/reduced
+Kiểm định thống kê
+9. Ma trận tương quan
+Tương quan giữa:
+Math, Reading, Writing
+Total, Average
+10. Phân tích chéo
+Giới tính × Khóa ôn thi
+Giới tính × Bữa trưa
+11. Kiểm định Chi-square
+Giới tính vs Xếp loại
+Khóa ôn thi vs Đạt/Không đạt
+12. Tương quan Pearson
+Math vs Reading
+Math vs Writing
+Reading vs Writing
 
-```
-pip install pandas numpy matplotlib seaborn scikit-learn scipy
-```
+4 Ý nghĩa
 
-## Chạy chương trình
-
-```
-python main.py
-```
-
-## Thành viên
-
-| STT | Họ và tên        | MSSV     | Phụ trách |
-|-----|------------------|----------|-----------|
-| 1   | Bùi Minh hiếu    | 20222227 | Làm sạch dữ liệu (Phần 1) + Insight & Kết luận (Phần 5) |
-| 2   | Nguyễn Quốc Bảo  | 20221333 | Phân tích khám phá EDA (Phần 2) |
-| 3   | Nguyễn Đức Dũng  | 20222220 | Trực quan hóa dữ liệu (Phần 3) |
-| 4   | Nguyễn Mạnh Hùng | 20222173 | Xây dựng mô hình & Đánh giá (Phần 4) + Viết báo cáo tổng hợp |
-
-## Phân công công việc chi tiết
-
-### Thành viên 1 – Làm sạch dữ liệu + Insight
-- Làm sạch dữ liệu
-- Xử lý lỗi
-- Tạo biến mới
-- Viết insight và kết luận
-
-### Thành viên 2 – EDA
-- Thống kê mô tả
-- Phân tích dữ liệu
-- Kiểm định thống kê
-
-### Thành viên 3 – Visualization
-- Vẽ biểu đồ
-- Trực quan hóa dữ liệu
-
-### Thành viên 4 – Modeling + Báo cáo
-- Xây dựng mô hình
-- Đánh giá mô hình
-- Viết báo cáo tổng hợp
-
-## Ghi chú
-- Chạy file main.py để thực thi toàn bộ chương trình
-- Kết quả lưu trong thư mục output/
-
-.
+Xác định yếu tố ảnh hưởng đến kết quả học tập
+Hỗ trợ xây dựng mô hình Machine Learning
+Làm cơ sở cho phần Insight & Visualization
